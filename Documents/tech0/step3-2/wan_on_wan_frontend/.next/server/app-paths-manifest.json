@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/home/page": "app/home/page.js",
+  "/home/walksearch/page": "app/home/walksearch/page.js",
+  "/new/page": "app/new/page.js",
+  "/new/visitor/page": "app/new/visitor/page.js",
+  "/home/walksearch/detail/page": "app/home/walksearch/detail/page.js"
+}
