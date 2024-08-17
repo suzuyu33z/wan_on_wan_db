@@ -142,7 +142,6 @@ def post_walk_message(walk_id):
 def request_walk():
     data = request.get_json()
     requesting_user_id = session.get('user_id')
-    
     if not requesting_user_id:
         return jsonify({"error": "Unauthorized"}), 401
     
