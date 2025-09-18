@@ -1,51 +1,41 @@
-# 投票アプリ
+# 🍻 飲み会ゲームアプリ
 
-StreamlitとSupabaseを使用した リアルタイム投票アプリです。「〇〇の人！」のような質問を作成し、みんなでYES/NO投票を楽しめます。
+Streamlit + Supabaseで作成したリアルタイム投票型飲み会ゲームです。
 
-## 機能
+## 🎮 機能
+- **お題入力**: ホストがお題を設定
+- **リアルタイム投票**: 参加者がYES/NOで投票
+- **結果表示**: YESの人数を即座に表示
+- **ゲーム進行**: 連続してお題を楽しめる
 
-- 投票作成: 新しい質問を作成
-- 投票参加: スマホからYES/NOで投票
-- 結果表示: リアルタイムで結果確認
+## 🚀 デプロイ
 
-## セットアップ
+### Streamlit Cloudでのデプロイ
+1. [Streamlit Cloud](https://streamlit.io/cloud)にアクセス
+2. GitHubリポジトリを連携
+3. `main.py`を指定してデプロイ
+4. 環境変数を設定：
+   - `SUPABASE_URL`: あなたのSupabaseプロジェクトURL
+   - `SUPABASE_KEY`: SupabaseのANON公開キー
 
-### 1. 必要なパッケージをインストール
+### Supabaseセットアップ
+1. [Supabase](https://supabase.com)でプロジェクト作成
+2. SQL Editorで`database_setup.sql`を実行
+3. Settings > APIから接続情報を取得
 
+## 🛠️ ローカル開発
 ```bash
 pip install -r requirements.txt
-```
-
-### 2. Supabaseの設定
-
-1. [Supabase](https://supabase.com)でプロジェクトを作成
-2. SQLエディタで`database_setup.sql`の内容を実行
-3. `.env.example`を`.env`にコピーして環境変数を設定:
-
-```bash
-cp .env.example .env
-```
-
-`.env`ファイルに以下を設定:
-```
-SUPABASE_URL=あなたのSupabaseプロジェクトURL
-SUPABASE_KEY=あなたのSupabase匿名キー
-```
-
-### 3. アプリの起動
-
-```bash
 streamlit run main.py
 ```
 
-## 使い方
-
-1. **投票作成タブ**: 「カラオケが好きな人！」などの質問を入力して投票を開始
-2. **投票参加タブ**: 各参加者がスマホでYES/NOをタップ
-3. **結果確認タブ**: 「結果を表示」ボタンを押すとYESの人数がドーンと表示！
+## 🎯 使い方
+1. お題を入力して「ゲーム開始」
+2. 参加者がYES/NOボタンで投票
+3. 「ゲーム終了」で結果発表
+4. 「次のお題へ」で新しいゲーム開始
 
 ## データベース構造
-
 - `polls`: 投票の質問と状態を管理
 - `votes`: 各投票の結果を記録
 
